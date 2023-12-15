@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "33179914170",
+    "project_id": "messenger-a62bb",
+    "storage_bucket": "messenger-a62bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33179914170:android:6afdf8f46bfa3c5b451783",
+        "android_client_info": {
+          "package_name": "uz.doston.messanger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO1HYzSSOMkomhl0k-TGpyc_PCok_8u5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
