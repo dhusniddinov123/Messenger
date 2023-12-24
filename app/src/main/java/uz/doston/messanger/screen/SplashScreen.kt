@@ -1,4 +1,4 @@
-package com.example.mathgame.screen
+ package com.example.mathgame.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,7 +19,7 @@ import uz.doston.messanger.R
 fun SplashScreen(navController: NavController) {
     LaunchedEffect(key1 = true){
         delay(2000)
-        navController.navigate("home_screen")
+        navController.navigate("login_screen")
     }
     Image(
         modifier = Modifier.fillMaxSize().padding(30.dp),

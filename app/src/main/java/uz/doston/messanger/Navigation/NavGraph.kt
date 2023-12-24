@@ -20,7 +20,7 @@ fun NavGraph (navController: NavHostController){
             HomeScreen()
         }
         composable(route = Screens.Login.route){
-            LoginScreen()
+            LoginScreen(navController)
         }
         composable(route = Screens.Message.route){
             MessageScreen()
@@ -29,7 +29,7 @@ fun NavGraph (navController: NavHostController){
             ProfileScreen()
         }
         composable(route = Screens.Regist.route){
-            RegistScreen()
+            RegistScreen(navController)
         }
 
 
