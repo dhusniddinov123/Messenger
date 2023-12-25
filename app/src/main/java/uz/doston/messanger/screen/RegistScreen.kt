@@ -94,7 +94,8 @@ fun RegistScreen(navController: NavController) {
                     if (it) {
                         AppDataBase.createUser(User(fullname.text, username.text, password.text))
                         AppDataBase.saveUser(context, username.text)
-                        navController.navigate("home_screen")
+                        navController.navigate("home_" +
+                                "screen")
                     } else {
                         Toast.makeText(
                             context, "Username already exists. Change username", Toast.LENGTH_SHORT
