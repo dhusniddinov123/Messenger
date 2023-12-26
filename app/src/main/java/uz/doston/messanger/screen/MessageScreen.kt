@@ -62,7 +62,7 @@ fun MessageScreen(name: String, navController: NavController) {
             )
         ), title = {
             Row(verticalAlignment = Alignment.CenterVertically) {
-                IconButton(onClick = { navController.navigate("Home") }) {
+                IconButton(onClick = { navController.navigate("home_screen") }) {
                     Icon(
                         imageVector = Icons.Default.ArrowBack,
                         contentDescription = "Back Icon",

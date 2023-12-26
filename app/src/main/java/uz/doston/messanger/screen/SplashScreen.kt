@@ -6,20 +6,21 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import kotlinx.coroutines.delay
-import uz.doston.messanger.Navigation.NavGraph
+import uz.doston.messanger.Database.AppDataBase
 import uz.doston.messanger.R
 
-@Composable
+ @Composable
 fun SplashScreen(navController: NavController) {
+     val context = LocalContext.current
     LaunchedEffect(key1 = true){
         delay(2000)
-        navController.navigate("login_screen")
+        if (AppDataBase.getSavedUser(context) == "") navController.navigate("login_screen")
+        else navController.navigate("home_screen")
     }
     Image(
         modifier = Modifier.fillMaxSize().padding(30.dp),
@@ -30,10 +31,10 @@ fun SplashScreen(navController: NavController) {
 
 
 
-@Preview(showBackground = true)
-@Composable
-fun test() {
-    val navController = rememberNavController()
-    NavGraph(navController = navController)
-    SplashScreen(navController = navController)
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun test() {
+//    val navController = rememberNavController()
+//    NavGraph(navController = navController)
+//    SplashScreen(navController = navController)
+//}

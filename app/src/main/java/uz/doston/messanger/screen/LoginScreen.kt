@@ -78,7 +78,7 @@ fun LoginScreen(navController: NavController) {
                 Toast.makeText(context, result, Toast.LENGTH_SHORT).show()
                 if (result == "Successful Login") {
                     AppDataBase.saveUser(context, username.text)
-                    navController.navigate("Home")
+                    navController.navigate("home_screen")
                 }
             }
         }) {
