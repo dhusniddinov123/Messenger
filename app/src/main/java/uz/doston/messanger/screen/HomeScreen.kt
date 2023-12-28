@@ -43,19 +43,21 @@ fun HomeScreen(navController: NavController) {
         users = list
     }
 
-    Scaffold(containerColor = Color(14, 22, 33), topBar = {
+    Scaffold(containerColor = Color(255, 255, 255, 255), topBar = {
         TopAppBar(colors = TopAppBarDefaults.smallTopAppBarColors(
-            containerColor = Color(
-                14, 22, 33
-            )
+            containerColor = Color(0, 176, 255, 255)
         ), title = {
-            IconButton(onClick = { navController.navigate("profile_screen") }) {
-                Icon(
-                    imageVector = Icons.Default.Settings,
-                    contentDescription = "Settings Icon",
-                    tint = Color(108, 120, 131),
-                )
+            Row {
+                IconButton(onClick = { navController.navigate("profile_screen") }) {
+                    Icon(
+                        imageVector = Icons.Default.Settings,
+                        contentDescription = "Settings Icon",
+                        tint = Color(108, 120, 131),
+                    )
+                }
+                Text(text = "Messenger" , color = Color.White, modifier = Modifier.padding(top = 10.dp))
             }
+
         })
     }) { innerPadding ->
         LazyColumn(

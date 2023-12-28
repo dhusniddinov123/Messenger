@@ -2,6 +2,7 @@ package uz.doston.messanger.screen
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,13 +36,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import uz.doston.messanger.Database.AppDataBase
 import uz.doston.messanger.Database.Message
+import uz.doston.messanger.R
 
 
 @RequiresApi(Build.VERSION_CODES.O)
@@ -55,11 +59,12 @@ fun MessageScreen(name: String, navController: NavController) {
     AppDataBase.getMessages(name, AppDataBase.getSavedUser(context)) { list ->
         messages = list
     }
-    Scaffold(containerColor = Color(14, 22, 33), topBar = {
+
+
+
+    Scaffold(containerColor = Color(0xFF6BB185), topBar = {
         TopAppBar(colors = TopAppBarDefaults.smallTopAppBarColors(
-            containerColor = Color(
-                23, 33, 43
-            )
+            containerColor = Color(0, 176, 255, 255)
         ), title = {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 IconButton(onClick = { navController.navigate("home_screen") }) {
@@ -106,6 +111,7 @@ fun MessageScreen(name: String, navController: NavController) {
         }
     }) { innerPadding ->
         LazyColumn(
+
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding),
@@ -125,6 +131,7 @@ fun MessageScreen(name: String, navController: NavController) {
     }
 
 }
+
 @Composable
 fun MessageItem(msg: String, time: String, position: Boolean){
     Row(
@@ -136,43 +143,44 @@ fun MessageItem(msg: String, time: String, position: Boolean){
             Spacer(modifier = Modifier.weight(1f))
             Column(horizontalAlignment = Alignment.End) {
                 Surface(
+//                    #EEFFDE
                     modifier = Modifier
-                        .background(Color(43, 82, 120), RoundedCornerShape(33))
+                        .background(Color(0xFFEEFFDE), RoundedCornerShape(33))
                         .padding(horizontal = 10.dp, vertical = 5.dp)
                 ) {
                     Text(
-                        modifier = Modifier.background(Color(43, 82, 120)),
+                        modifier = Modifier.background(Color(0xFFEEFFDE)),
                         fontSize = 25.sp,
                         text = msg,
-                        color = Color.White,
+                        color = Color.Black,
                     )
                 }
                 Text(
                     modifier = Modifier.padding(top = 3.dp),
                     fontSize = 17.sp,
                     text = time,
-                    color = Color.White
+                    color = Color.Black
                 )
             }
         } else {
             Column(horizontalAlignment = Alignment.Start) {
                 Surface(
                     modifier = Modifier
-                        .background(Color(24, 37, 51), RoundedCornerShape(33))
+                        .background(Color(255, 255, 255, 255), RoundedCornerShape(33))
                         .padding(horizontal = 10.dp, vertical = 5.dp)
                 ) {
                     Text(
-                        modifier = Modifier.background(Color(24, 37, 51)),
+                        modifier = Modifier.background(Color(255, 255, 255, 255)),
                         fontSize = 25.sp,
                         text = msg,
-                        color = Color.White,
+                        color = Color.Black,
                     )
                 }
                 Text(
                     modifier = Modifier.padding(top = 3.dp),
                     fontSize = 17.sp,
                     text = time,
-                    color = Color.White
+                    color = Color.Black
                 )
             }
             Spacer(modifier = Modifier.weight(1f))

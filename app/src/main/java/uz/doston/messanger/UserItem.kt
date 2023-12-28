@@ -30,9 +30,9 @@ fun UserItem(name: String, navController: NavController){ Row(
         imageVector = Icons.Default.Person,
         contentDescription = "Person Icon",
         Modifier.size(32.dp),
-        tint = Color.White,
+        tint = Color.Black,
     )
-    Text(fontSize = 24.sp, text = name, color = Color.White)
+    Text(fontSize = 24.sp, text = name, color = Color.Black)
 }
     Divider(modifier = Modifier.fillMaxWidth(), thickness = 2.dp, color = Color(108, 120, 131))
 }

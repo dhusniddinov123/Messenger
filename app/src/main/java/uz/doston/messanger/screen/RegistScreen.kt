@@ -2,6 +2,7 @@ package uz.doston.messanger.screen
 
 import android.widget.Toast
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.TextFieldValue
@@ -36,10 +38,16 @@ fun RegistScreen(navController: NavController) {
     var fullname by remember { mutableStateOf(TextFieldValue("")) }
     var password by remember { mutableStateOf(TextFieldValue("")) }
     val context = LocalContext.current
+    var gradient  = Brush.verticalGradient(
+        0.0f to Color(0xFF392467),
+        0.25f to Color(0xFF5D3587),
+        0.75f to Color(0xFFA367B1),
+        1.0f to Color(0xFFFFD1E3),
+    )
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(14, 22, 33)),
+            .background(gradient),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -110,10 +118,19 @@ fun RegistScreen(navController: NavController) {
                 fontSize = 19.sp
             )
         }
-        Button(colors = ButtonDefaults.buttonColors(containerColor = Color(14, 22, 33)), onClick = {
+        Text(text = "Log In",
+        fontSize = 20.sp,
+        color = Color.White,
+        modifier=Modifier.padding(30.dp).clickable {
             navController.navigate("login_screen")
-        }) {
-            Text(text = "Already have an account", fontSize = 17.sp)
-        }
+        })
     }
 }
+//@RequiresApi(Build.VERSION_CODES.O)
+//@Preview(showBackground = true)
+//@Composable
+//fun test() {
+//    val navController = rememberNavController()
+//    NavGraph(navController = navController)
+//    RegistScreen(navController = navController)
+//}

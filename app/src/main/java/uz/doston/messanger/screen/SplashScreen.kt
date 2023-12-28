@@ -23,7 +23,7 @@ fun SplashScreen(navController: NavController) {
         else navController.navigate("home_screen")
     }
     Image(
-        modifier = Modifier.fillMaxSize().padding(30.dp),
+        modifier = Modifier.fillMaxSize().padding(100.dp),
         painter = painterResource(id = R.drawable.img), contentDescription = null,
 //        contentScale = ContentScale.Crop
     )
